@@ -1,0 +1,51 @@
+//////////////////////////
+// SCSS for-loops
+//////////////////////////
+// For-loops in SCSS - 1,2,3,4,5,6
+@for $i from 1 through 6 {
+	.col-#{i} {
+		width: $i * 2em;
+	}
+}
+
+// For-loops in SCSS - 1,2,3,4,5
+@for $i from 1 to 6 {
+	.col-#{i} {
+		width: $i * 2em;
+	}
+}
+
+//////////////////////////
+// SCSS for-each-loop
+//////////////////////////
+// Each-loop in SCSS
+// List with three elements:
+$speakers: bob-banker, patty-plume, sandra-smith;
+
+// Iterate through the list:
+@each $speaker in $speakers {
+	.#{$speaker}-profile {
+		background-image: url('/img/#{$speaker}.png');
+	}
+}
+
+// Map with four elements - map is just like a dictionary, key-value pairs
+$font-sizes: (tiny: 8px, small: 11px, medium: 13px, large: 18px);
+
+// Iterate through the map
+@each $name, $size in $font-sizes {
+	.#{$name} {
+		font-size: $size;
+	}
+}
+
+//////////////////////////
+// SCSS while-loop
+//////////////////////////
+$j: 2;
+@while $j <= 8 {
+	.picture-#{$j} {
+		width: $j * 10%;
+	}
+	$j: $j + 2;
+}
